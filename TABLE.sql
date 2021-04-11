@@ -1,7 +1,7 @@
 -- # СТВОРЕННЯ
 -- створення нової БД
-CREATE SCHEMA if not exists coolcopany -- створення нової схеми
-DEFAULT character set cp1251 -- кодування
+CREATE SCHEMA IF NOT EXISTS coolcopany -- створення нової схеми
+DEFAULT character SET cp1251 -- кодування
 COLLATE cp1251_ukrainian_ci; -- правила пошуку тексту, ci - чутливий до регістру
 
 -- перехід до певної БД
@@ -99,6 +99,3 @@ SELECT student_name FROM students WHERE EXISTS (SELECT student_name FROM student
 
 -- Any , ALL  - тут ясно
 SELECT * FROM students WHERE student_id = ALL (SELECT student_id  FROM students WHERE student_id = 1);
-
-
-
