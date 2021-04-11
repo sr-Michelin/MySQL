@@ -23,9 +23,9 @@ DESCRIBE students;
 -- видалення таблиці
 DROP TABLE students;
 -- видалення даних таблиці, unsafe
-DELETE FROM students WHERE  student_name = 'Mike';
--- видалення усіх даних, unsafe
-DELETE FROM students; 
+DELETE FROM students WHERE student_name = 'Mike';
+-- видалення усіх даних, safe
+TRUNCATE TABLE students;
 
 -- # ЗМІНА 
 -- зміна вже готової таблиці
@@ -33,6 +33,7 @@ ALTER TABLE student RENAME TO students;
 ALTER TABLE students ADD student_birth date;
 ALTER TABLE students DROP COLUMN student_birth;
 ALTER TABLE students CHANGE student_course student_courses INT NOT NULL;
+ALTER TABLE students MODIFY COLUMN student_name VARCHAR(60); -- модифкація без видаення 
 
 -- введення нових даних
 INSERT INTO students (student_name, student_city, student_course) VALUES ('Petro Sapriyanchuk', 'Lviv', '4'); 
@@ -92,6 +93,7 @@ SELECT student_name FROM students UNION ALL SELECT student_course FROM students;
 SELECT * FROM students GROUP BY student_name;
 
 -- HAVING (WHERE не може використовуватися з агрегатними функціями)
+-- SQL дозволяє привести кілька записів таблиці до деякого єдиного значення
 SELECT * FROM students HAVING COUNT(student_course) > 1;
 
 -- EXISTS  (повертає значення true, якщо вкладений запит повертає одну або кілька записів)
