@@ -25,7 +25,7 @@ INSERT INTO bird(bird_name) VALUES ('Журавель');
 INSERT INTO bird(bird_name) VALUES ('Страус');
 INSERT INTO bird(bird_name) VALUES ('Курка');
 
--- створення третьої таблиці (зв'язок між двоса попередніми)
+-- створення третьої таблиці (зв'язок між двома попередніми)
 CREATE TABLE IF NOT EXISTS animal_bird_relationship(
 animal_id INT, 
 bird_id INT, 
