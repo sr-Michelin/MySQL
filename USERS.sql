@@ -9,7 +9,7 @@ user_entry_date TIMESTAMP(0),
 user_photo BLOB 
 );
 
-DROP TABLE users;
+DROP TABLE users;students
 DESCRIBE users;
 SELECT * FROM users;
 

@@ -57,6 +57,7 @@ SELECT * FROM students where NOT student_course IS NULL LIMIT 2;
 
 -- вибір рядків за максимальними і мінімальними значеннями
 SELECT MIN(student_course) as smallest_course FROM students;
+-- ident SELECT smallest_course = MIN(student_course) FROM students;
 SELECT MAX(student_course) as largest_course FROM students;
 
 -- SQL Count (), AVG () и Sum ()
@@ -75,7 +76,7 @@ SELECT * FROM students WHERE student_name LIKE '[A-Z]%'; -- якщо почин�
 SELECT * FROM students WHERE student_name LIKE '[!bsp]%'; -- якщо НЕ починається на "b", або "s", або "p"
 
 -- IN - якщо стовпець в (приймає означене значення)
-SELECT * FROM students WHERE student_course in (4);
+SELECT * FROM students WHERE student_course IN (4,5);
 
 -- BETWEEN, AND - значення між , .. і
 SELECT * FROM students WHERE student_course BETWEEN 4 AND 5;
@@ -83,7 +84,7 @@ SELECT * FROM students WHERE student_course BETWEEN 4 AND 5;
 -- Aliases (student_name --> name)
 SELECT student_name as name FROM students;
 
--- JOIN (зєднання) - для прикладу
+-- JOIN (зєднання) - для прикладу... (ДОРОБИТИ)
 SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 
 -- UNION(обєднання двох SELECT) [ALL - для повторюючих елементів]
