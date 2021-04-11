@@ -53,3 +53,18 @@ REFERENCES employee (employee_id); -- прив'язка до стовпця {emp
 SELECT * FROM company.department;
 SELECT * FROM company.employee;
 
+ -- Зв'язок типу ЗК-ПК d в ОДНІЙ таблиці
+ -- наприклад, хто кому начальник
+ ALTER TABLE employee ADD COLUMN manager_id INT; -- створення стовпця manager_id 
+ 
+ -- В'ЯЖЕМО
+ ALTER TABLE employee -- зміна таблиці employee
+ ADD CONSTRAINT fk_empl_mgr_on_empl -- добавлення ОБМЕЖЕННЯ fk_empl_mgr_on_empl
+ FOREIGN KEY (manager_id) -- ОБМЕЖЕННЯ - 'зовнішній ключ' -- manager_id
+ REFERENCES employee(employee_id); -- прив'язка ключа до стопця employee_id
+ 
+ -- присвоємо начальників
+ UPDATE employee SET manager_id = NULL WHERE employee_id = 1;
+ SELECT * FROM employee;
+ 
+
