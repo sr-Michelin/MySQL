@@ -1,3 +1,5 @@
+-- Зв'язані таблиці
+
 CREATE SCHEMA company;
  
  USE company;

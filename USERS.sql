@@ -1,3 +1,5 @@
+-- ПРОСТИЙ ПРИКЛАД БД/ТБ
+
 USE coolcompany;
 
 CREATE TABLE IF NOT EXISTS users(
@@ -9,7 +11,7 @@ user_entry_date TIMESTAMP(0),
 user_photo BLOB 
 );
 
-DROP TABLE users;students
+DROP TABLE users;
 DESCRIBE users;
 SELECT * FROM users;
 
